@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap');
+* {
+    font-family: 'Source Sans Pro', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.hero-head {
+    background: darkolivegreen;
+    padding: 10px;
+    text-align: right;
+}
+
+.navbar-item {
+    font-size: 20px;
+    margin: 0 5px;
+}
+
+.navbar-item:link, .navbar-item:visited {
+    color: white;
+    text-decoration: white;
+}
+
+.navbar-item:hover {
+    color: palegoldenrod;
+    text-decoration: white;
+}
+
+.title {
+    text-align: center;
+    margin: 10px 0 0;
+    font-size: 37px;
+    font-weight: bold;
+}
+
+.subtitle {
+    text-align: center;
+    margin: 8px 0 12px;
+    font-size: 30;
+    font-weight: normal;
+}
+
+.box {
+    border: 2px solid black;
+    border-radius: 8px;
+    width: 350px;
+    display: block;
+    position: relative;
+    margin: 10px auto;
+    padding: 10px;
+    text-align: center;
+}
+
+.login-field {
+    margin: 5px auto;
+}
+
+.large-input {
+    width: 250px;
+    height: 30px;
+    font-size: 16px;
+}
+
+.checkbox {
+    font-size: 18px;
+}
+
+button {
+    width: 100px;
+    height: 30px;
+    font-size: 17px;
+    border: 1px solid black;
+    border-radius: 4px;
+    background: orange;
+    transition: all 0.4s ease;
+}
+
+button:hover {
+    cursor: pointer;
+    background: orangered;
+}
+
+.notification {
+    color: red;
+    font-size: 18px;
+}
+
+.forgot {
+    font-size: 13px;
+}
+
+.message {
+    margin: 10px 20px;
+    overflow: hidden;
+}
+
+.message > .content {
+    display: block;
+    float: left;
+    width: 900px;
+    word-wrap: break-word;
+    white-space: normal;
+    font-size: 18px;
+}
+.message > .bytime {
+    float: right;
+    font-size: 15px;
+    margin: 0 50px;
+}
+
+.message-box {
+    margin: 20px 5px 10px 40px;
+    width: 450px;
+    height: 30px;
+    font-size: 17px;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+#messages {
+    height: 500px;
+    overflow-y: auto;
+}
+
+.about {
+    font-size: 18px;
+    text-align: center;
+    width: 700px;
+    margin: 20px auto;
+}
+
+.delete-acc {
+    margin: 20px;
+    text-align: center;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.delete-acc > a:link, .delete-acc > a:visited {
+    color: darkred;
+    text-decoration: none;
+}
+
+.delete-acc > a:hover {
+    color: red;
+    text-decoration: underline;
+}

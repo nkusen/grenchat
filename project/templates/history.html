@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title">Chat</h1>
+{% for message in messages %}
+<div class="message">
+    <span class="content">{{ message.content }}</span>
+    <span class="bytime">{{ message.user }}  {{ message.time.strftime('%I:%M%p') }}</span>
+</div>
+{% endfor %}
+{% endblock %}

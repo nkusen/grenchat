@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block js %}
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.3/socket.io.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+{% endblock %}
+
+{% block content %}
+<h1 class="title">Chat</h1>
+
+<script type="text/javascript">
+$(document).ready(() => {
+    var socket = io({rememberTransport: false});
+    socket.on("json", (json) => {
+        $("#messages").append(`<div class="message"><span class="content">${json.content}</span><span class="bytime">${json.user}  ${json.time}</span></div>`);
+    });
+    $("#content").keypress((e) => {
+        if (e.which === 13) {
+            socket.send($("#content").val());
+            $("#content").val("");
+            $("#content").focus();
+        }
+    });
+    $("#button").on("click", () => {
+        if ($("#content").val()) {
+            socket.send($("#content").val());
+            $("#content").val("");
+            $("#content").focus();
+        }
+    });
+});
+</script>
+
+<div id="messages"></div>
+<div class="message-form">
+    <input class="message-box" type="text" name="content" id="content" placeholder="Message">
+    <button class="button" id="button">Send</button>
+</div>
+{% endblock %}

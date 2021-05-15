@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title">Reset password</h1>
+<div class="box">
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <div class="notification">
+        {{ messages[0] }}
+    </div>
+    {% endif %}
+    {% endwith %}
+    <form action="/reset" method="POST">
+        <div class="login-field">
+            <input type="email" class="large-input" name="email" placeholder="Enter e-mail" autofocus="">
+        </div>
+        <div class="login-field">
+            <button>Reset</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <link rel="stylesheet" href="static/main.css">
+    {% block js %}{% endblock %}
+</head>
+<body>
+    <div class="hero-head">
+        <nav class="navbar">
+            <div class="contrainer">
+                <div class="navbar-menu" id="navbarMenuHeroA">
+                    <div class="navbar-end">
+                        <a href="{{ url_for('main.index') }}" class="navbar-item">
+                            Home
+                        </a>
+                        {% if current_user.is_authenticated %}
+                        <a href="{{ url_for('main.chat') }}" class="navbar-item">
+                            Chat
+                        </a>
+                        {% endif %}
+                        {% if current_user.is_authenticated %}
+                        <a href="{{ url_for('main.history') }}" class="navbar-item">
+                            History
+                        </a>
+                        {% endif %}
+                        {% if current_user.is_authenticated %}
+                        <a href="{{ url_for('main.profile') }}" class="navbar-item">
+                            Profile
+                        </a>
+                        {% endif %}
+                        {% if not current_user.is_authenticated %}
+                        <a href="{{ url_for('auth.login') }}" class="navbar-item">
+                            Login
+                        </a>
+                        {% endif %}
+                        <a href="{{ url_for('auth.signup') }}" class="navbar-item">
+                            Sign Up
+                        </a>
+                        {% if current_user.is_authenticated %}
+                        <a href="{{ url_for('auth.logout') }}" class="navbar-item">
+                            Logout
+                        </a>
+                        {% endif %}
+                        <a href="{{ url_for('main.about') }}" class="navbar-item">
+                            About
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="hero-body">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
